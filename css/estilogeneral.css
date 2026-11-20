@@ -1,0 +1,3431 @@
+
+
+ /*Inicio horario-ubicacion*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap');
+
+:root {
+  --green: #285b43;
+  --green-dark: #183d2d;
+  --green-light: #eaf1e6;
+  --lime: #d6e7a9;
+  --cream: #f7f8f2;
+  --ink: #26362c;
+  --muted: #718076;
+  --line: #e7ece4;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.site-header {
+  background-color: #35d64d;
+  color: white;
+}
+
+.nav {
+  max-width: 1120px;
+  margin: auto;
+  padding: 17px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--lime);
+  color: var(--green-dark);
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #e9f0e9;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-links .current {
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 2px solid var(--lime);
+  padding: 7px 0;
+}
+
+.intro,
+.content-grid {
+  max-width: 1120px;
+  margin: auto;
+}
+
+.intro {
+  max-width: 1200px;
+  margin: 2rem auto 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #303946;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin: 9px 0 10px;
+  color: #303946;
+  font-size: 32px;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+
+.intro h1 span {
+  color: #303946 ;
+}
+
+.lead {
+  margin: 4px 0 0;
+  max-width: 560px;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.content-grid {
+  padding: 0 28px 60px;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  padding: 27px;
+  box-shadow: 0 12px 30px #163b2610;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 14px;
+  background: var(--green-light);
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+}
+
+.card-heading .eyebrow {
+  font-size: 10px;
+}
+
+.card h2 {
+  margin: 3px 0 0;
+  color: var(--green-dark);
+  font: 800 22px 'Nunito', sans-serif;
+}
+
+.muted {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.hours-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.hours-list li span {
+  color: #56665c;
+}
+
+.hours-list li strong {
+  font-weight: 700;
+  text-align: right;
+}
+
+.closed {
+  color: #8a6457;
+}
+
+.visit-note {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  background: #f1f6e9;
+  border-radius: 13px;
+  padding: 13px 15px;
+  margin-top: 19px;
+  color: var(--green);
+}
+
+.visit-note > span {
+  font-size: 19px;
+}
+
+.visit-note p {
+  font-size: 12px;
+  margin: 0;
+  color: #586c5c;
+}
+
+.visit-note strong {
+  color: var(--green-dark);
+}
+
+.address {
+  margin: -4px 0 15px;
+  display: grid;
+  gap: 2px;
+}
+
+.address strong {
+  font-size: 14px;
+  color: var(--green-dark);
+}
+
+.address span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: 270px;
+  border: 0;
+  border-radius: 13px;
+  background: #e7eee4;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .2s;
+}
+
+.map-link:hover {
+  background: var(--green-dark);
+}
+
+.footer{
+  width: 100%;
+  height: 250px;
+  background-color: #173D2B;
+  margin-top: 150px;
+}                                                                                                                                                                                                                                        .titulo_3{
+  display: flex;
+  flex-direction: column;          
+  line-height: 1.2;                
+}
+.letra_for{
+  color: rgb(243, 239, 239);
+  font-size: 35px;
+  text-align: left;
+  padding-left: 10%;
+  line-height: 34px;
+  white-space: pre;  
+}
+.letra_fur{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 26px;
+  padding-left: 12PX;
+  color: white;
+}
+.letra_fur p{
+  margin: 0;
+}
+.texto_foto_r{ 
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 50px;
+}                                                                                                                                                                                                                                           .columnas_texto {
+  display: grid;
+  grid-template-rows: repeat(4, auto); 
+  grid-auto-flow: column;                
+  column-gap: 150px;
+  row-gap: 25px;
+  align-items: right;
+  padding-left: 350px;
+}
+.columnas_texto p {
+  margin: 0;
+  font-size: 15px;
+  color: #f6f6f6;
+}
+.columnas_texto h1 {
+  margin: 0;
+  font-size: 25px;
+  color: #f6f6f6;
+}
+
+.foto_left{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 50px;
+}
+ /*Final horario-ubicacion*/
+
+ /* inicio catalogo-mascotas */ 
+
+ body.pagina-catalogo-mascotas, body.pagina-catalogo-mascotas * {
+
+    box-sizing: border-box;
+
+}
+body.pagina-catalogo-mascotas {
+
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #cbeeb4;
+    color: #252525;
+
+
+}
+.pagina-catalogo-mascotas .contenedor {
+
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+
+}
+.pagina-catalogo-mascotas #content {
+    display: grid;
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    padding: 32px 0;
+
+
+}
+.pagina-catalogo-mascotas .producto {
+
+    background-color: rgb(248, 250, 247);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.pagina-catalogo-mascotas .producto img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #e3e9df;
+
+}
+.pagina-catalogo-mascotas .producto-ilustracion {
+  width: 100%;
+  height: 220px;
+  display: grid;
+  place-items: center;
+  background-color: #e5f8e8;
+  border-radius: 10px;
+  border: 1px solid #35d64d;
+  font-size: 88px;
+
+}
+.pagina-catalogo-mascotas .producto h2 {
+    margin: 12px 0 8px;
+    font-size: 18px;
+
+}
+.pagina-catalogo-mascotas .precio {
+
+    color: #5b8c35;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 8px 0 0;
+
+
+}
+.pagina-catalogo-mascotas .btn-carrito {
+    width: 100%;
+    margin-top: auto;
+    padding: 11px 10px;
+    border: 0;
+    border-radius: 20px;
+    background-color: #35d64d;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+}
+.pagina-catalogo-mascotas .btn-carrito:hover {
+    background-color: #28a73a;
+    transform: translateY(-2px);
+
+}
+.pagina-catalogo-mascotas .btn-carrito:focus-visible {
+    outline: 3px solid #35d64d;
+    outline-offset: 3px;
+
+}
+.pagina-catalogo-mascotas header:not(.clinic-navbar):not(.principal-header) {
+
+    padding: 128px 0 32px;
+    text-align: center;
+    background-color: #35d64d;
+    
+
+
+}
+.pagina-catalogo-mascotas header:not(.principal-header) h1 {
+    margin: 0 ;
+    color: #fafbfa;
+    font-size: 32px;
+    font-size: 60px;
+    
+
+
+}
+.pagina-catalogo-mascotas header:not(.principal-header) p {
+
+    margin: 8px 0 0;
+    color: #f9f8f8;
+    font-size: 30px;
+
+}
+.pagina-catalogo-mascotas .icono-marca {
+
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: #b0efbb;
+    font-size: 24px;
+    border: 2px 4;
+    
+
+}
+.pagina-catalogo-mascotas .texto-marca {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+}
+.pagina-catalogo-mascotas .texto-marca strong {
+    font-size: 20px;
+    color: #1cdf6a;
+
+}
+.pagina-catalogo-mascotas .texto-marca small {
+    color: #0e721d;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+}
+.pagina-catalogo-mascotas /* pasar el cursor */
+
+.producto:hover {
+
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+
+}
+.pagina-catalogo-mascotas /* Encabezado y navegación con el diseño de referencia */
+.navbar {
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    min-height: 45px;
+    padding: 0;
+    text-align: left;
+    background-color: #67ba14;
+    border-bottom: 1px solid #e2e5e9;
+
+}
+.pagina-catalogo-mascotas .nav-container {
+
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+}
+.pagina-catalogo-mascotas .logo {
+
+    grid-column: 1;
+    justify-self: start;
+    color: inherit;
+    text-decoration: none;
+
+}
+.pagina-catalogo-mascotas .brand-tagline {
+
+    display: block;
+    color: #7b8491;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+.pagina-catalogo-mascotas .nav-links {
+
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+    color: white;
+
+}
+.pagina-catalogo-mascotas .nav-links a {
+
+    color: #252a30;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+}
+.pagina-catalogo-mascotas .nav-links a:hover, .pagina-catalogo-mascotas .nav-links a:focus-visible {
+    color: #14532d;
+
+}
+.pagina-catalogo-mascotas .nav-links a:focus-visible, .pagina-catalogo-mascotas .logo:focus-visible {
+
+    outline: 2px solid #35d64d;
+    outline-offset: 4px;
+
+}
+
+
+@media (max-width: 640px) {
+.pagina-catalogo-mascotas .nav-container {
+
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px 16px;
+    
+}
+.pagina-catalogo-mascotas .logo, .pagina-catalogo-mascotas .nav-links {
+
+        grid-column: 1;
+        justify-self: center;
+    
+}
+.pagina-catalogo-mascotas .nav-links {
+
+        flex-wrap: wrap;
+        gap: 10px 22px;
+    
+}
+.pagina-catalogo-mascotas .nav-links a {
+
+        font-size: 16px;
+    
+}
+
+
+}
+.pagina-catalogo-mascotas /* Catálogo y buscador */
+.main-container {
+
+    min-height: 75vh;
+    padding: 40px 24px 0;
+    background-color: #f8f9fb;
+
+}
+.pagina-catalogo-mascotas .catalog-header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0 auto 28px;
+
+}
+.pagina-catalogo-mascotas .title-area h2 {
+
+    margin: 0;
+    color: #303946;
+    font-size: 32px;
+    font-weight: 700;
+
+}
+.pagina-catalogo-mascotas .title-area p {
+
+    margin: 4px 0 0;
+    color: #7b8491;
+    font-size: 16px;
+
+}
+.pagina-catalogo-mascotas .filter-buttons {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.pagina-catalogo-mascotas .filter-btn {
+
+    padding: 10px 22px;
+    border: 1px solid #d5dbe1;
+    border-radius: 24px;
+    background: #ffffff;
+    color: #20252b;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.pagina-catalogo-mascotas .filter-btn.active {
+
+    border-color: #2dcc50;
+    background: #2dcc50;
+    color: #ffffff;
+
+}
+.pagina-catalogo-mascotas .search-bar-container {
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto 28px;
+    padding: 0 20px;
+    border: 1px solid #d5dbe1;
+    border-radius: 16px;
+    background: #ffffff;
+
+}
+.pagina-catalogo-mascotas .search-icon {
+
+    position: relative;
+    display: inline-block;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+
+}
+.pagina-catalogo-mascotas .search-icon::before {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    border: 2px solid #7b8491;
+    border-radius: 50%;
+    content: "";
+
+}
+.pagina-catalogo-mascotas .search-icon::after {
+
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    width: 7px;
+    height: 2px;
+    background: #7b8491;
+    content: "";
+    transform: rotate(45deg);
+    transform-origin: right center;
+
+}
+.pagina-catalogo-mascotas .search-bar-container input {
+
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #252a30;
+    font: inherit;
+    font-size: 18px;
+
+}
+.pagina-catalogo-mascotas .search-bar-container input::placeholder {
+
+    color: #7b8491;
+    opacity: 1;
+
+}
+.pagina-catalogo-mascotas .search-bar-container:focus-within {
+
+    border-color: #aab4bf;
+
+}
+.pagina-catalogo-mascotas #content {
+
+    width: 100%;
+
+}
+.pagina-catalogo-mascotas .producto[hidden] {
+
+    display: none;
+
+}
+.pagina-catalogo-mascotas .sin-resultados {
+
+    margin: 0;
+    padding: 24px 0;
+    color: #7b8491;
+    text-align: center;
+
+}
+
+
+@media (max-width: 760px) {
+.pagina-catalogo-mascotas .main-container {
+
+        padding: 28px 16px 0;
+    
+}
+.pagina-catalogo-mascotas .catalog-header {
+
+        align-items: flex-start;
+        flex-direction: column;
+    
+}
+.pagina-catalogo-mascotas .title-area h2 {
+
+        font-size: 26px;
+    
+}
+.pagina-catalogo-mascotas .filter-buttons {
+
+        flex-wrap: wrap;
+    
+}
+
+
+}
+.pagina-catalogo-mascotas:not(.alimento-accesorios) /* footer */ 
+
+.footer {
+
+  width: 100%;
+  height: 250px;
+  background-color: #173D2B;
+  margin-top: 150px;
+   text-align: center;
+    color: #000000;
+    border-top: 1px solid #464746;
+
+}
+.pagina-catalogo-mascotas .titulo_3 {
+
+  display: flex;
+  flex-direction: column;          
+  line-height: 1.2;                
+
+}
+.pagina-catalogo-mascotas .letra_for {
+
+  color: rgb(243, 239, 239);
+  font-size: 35px;
+  text-align: left;
+  padding-left: 10%;
+  line-height: 34px;
+  white-space: pre;  
+
+}
+.pagina-catalogo-mascotas .letra_fur {
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 26px;
+  padding-left: 12PX;
+  color: white;
+
+}
+.pagina-catalogo-mascotas .letra_fur p {
+
+  margin: 0;
+
+}
+.pagina-catalogo-mascotas .texto_foto_r {
+ 
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+
+}
+.pagina-catalogo-mascotas .columnas_texto {
+
+  display: grid;
+  grid-template-rows: repeat(4, auto); 
+  grid-auto-flow: column;                
+  column-gap: 150px;
+  row-gap: 25px;
+  align-items: right;
+  padding-left: 350px;
+
+}
+.pagina-catalogo-mascotas .columnas_texto p {
+
+  margin: 0;
+  font-size: 15px;
+  color: #f6f6f6;
+
+}
+.pagina-catalogo-mascotas .columnas_texto h1 {
+
+  margin: 0;
+  font-size: 25px;
+  color: #f6f6f6;
+
+}
+.pagina-catalogo-mascotas .foto_left {
+
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 50px;
+
+}
+
+/* Final catalogo-mascotas */
+/* Final tarjeta-producto */
+
+/* Inicio catalogo-alimentos */
+/* ==========================================================
+   ESTILOS GENERALES (TEMA VERDE #35d64d Y BLANCO)
+   ========================================================== */
+
+body.alimento-accesorios {
+    --primary-green: #35d64d;
+    --primary-dark: #28a73a;
+    --primary-light: #f0fdf4;
+    --text-dark: #2d3748;
+    --text-muted: #718096;
+    --bg-main: #f8fafc;
+    --shadow: 0 4px 12px rgba(53, 214, 77, 0.1);
+    margin: 0;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+.alimento-accesorios .navbar {
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--primary-green);
+}
+
+.alimento-accesorios .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alimento-accesorios .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.alimento-accesorios .logo-icon {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+}
+
+.alimento-accesorios .brand-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.alimento-accesorios .brand-tagline {
+    display: block;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+  
+}
+
+.alimento-accesorios .nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.alimento-accesorios .nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.alimento-accesorios .nav-links a:hover {
+    color: var(--primary-dark);
+}
+
+.alimento-accesorios .nav-actions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.alimento-accesorios .icon-btn,
+.alimento-accesorios .cart-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--text-dark);
+    padding: 0.4rem;
+    position: relative;
+}
+
+.alimento-accesorios .cart-btn {
+    background: var(--primary-light);
+    color: var(--primary-green);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alimento-accesorios .cart-btn .badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: var(--primary-green);
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+
+/* ==========================================================
+   CONTENEDOR PRINCIPAL Y CABECERA DE CATÁLOGO
+   ========================================================== */
+.alimento-accesorios .main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.alimento-accesorios .catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.alimento-accesorios .title-area h2 {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    font-weight: 800;
+}
+
+.alimento-accesorios .title-area p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Botones de filtro rápido */
+.alimento-accesorios .filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.alimento-accesorios .filter-btn {
+    background: var(--white);
+    border: 1px solid #cbd5e1;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.alimento-accesorios .filter-btn.active,
+.alimento-accesorios .filter-btn:hover {
+    background-color: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+.alimento-accesorios .catalog-pet-filters {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin: -12px 0 20px;
+}
+
+/* Barra de búsqueda */
+.alimento-accesorios .search-bar-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.alimento-accesorios .search-bar-container i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.alimento-accesorios .search-bar-container input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: var(--white);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.alimento-accesorios .search-bar-container input:focus {
+    border-color: var(--primary-green);
+}
+
+/* ==========================================================
+   SECCIONES Y TARJETAS DE PRODUCTOS
+   ========================================================== */
+.alimento-accesorios .section-group {
+    margin-bottom: 2.5rem;
+}
+
+.alimento-accesorios .category-heading {
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 0.4rem;
+}
+
+.alimento-accesorios .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjeta individual */
+.alimento-accesorios .product-card {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.alimento-accesorios .product-card[hidden] {
+    display: none;
+}
+
+.alimento-accesorios .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(53, 214, 77, 0.15);
+}
+
+.alimento-accesorios .card-img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f1f5f9;
+    margin-bottom: 0.8rem;
+}
+
+.alimento-accesorios .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.alimento-accesorios .product-card h4 {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.alimento-accesorios .subtext {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+
+.alimento-accesorios .price {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+/* Botón de compra unificado al verde #35d64d */
+.alimento-accesorios .btn-cart {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: background-color 0.2s;
+}
+
+.alimento-accesorios .btn-cart:hover {
+    background-color: var(--primary-dark);
+}
+
+.sin-resultados {
+    width: 100%;
+    margin: 0;
+    padding: 24px 0;
+    color: #64746a;
+    text-align: center;
+}
+
+.estado-stock {
+  margin: 8px 0;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.estado-stock.disponible { color: #16803c; }
+.estado-stock.agotado { color: #a62924; }
+
+.pagina-catalogo-mascotas .btn-carrito:disabled,
+.pagina-catalogo-mascotas .btn-carrito:disabled:hover,
+.alimento-accesorios .btn-cart:disabled,
+.alimento-accesorios .btn-cart:disabled:hover {
+  transform: none;
+  background: #9ca3af;
+  color: #fff;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.alimento-accesorios .btn-comparar,
+.pagina-catalogo-mascotas .btn-comparar {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid #2dcc50;
+  border-radius: 20px;
+  background: #fff;
+  color: #2d3748;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.alimento-accesorios .btn-comparar:hover:not(:disabled),
+.pagina-catalogo-mascotas .btn-comparar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #2dcc50;
+  color: #fff;
+}
+
+.alimento-accesorios .btn-comparar:disabled,
+.pagina-catalogo-mascotas .btn-comparar:disabled {
+  background: #eaf7ec;
+  color: #246b35;
+  cursor: default;
+  transform: none;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 768px) {
+    .alimento-accesorios .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem 1.2rem;
+    }
+    .alimento-accesorios .catalog-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* parte plantilla principla jorge inicio*/
+
+/* Cabecera */
+.principal-header {
+  width: 100%;
+  color: #383838;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.principal-header-inner {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-right: clamp(20px, 5vw, 72px);
+  padding-left: clamp(20px, 5vw, 72px);
+  box-sizing: border-box;
+}
+
+/* Franja superior */
+.principal-topbar {
+  height: 38px;
+  background: #f2f2f2;
+}
+
+.principal-topbar-inner {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 42px;
+}
+
+.principal_letra_1,
+.principal-gift {
+  margin: 0;
+  color: #555;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.principal-gift {
+  color: #666;
+  text-decoration: none;
+}
+
+.principal-gift:hover {
+  color: #8aaa53;
+}
+
+.principal_barra {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 26px;
+  width: auto;
+  margin-left: auto;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.principal_opciones {
+  position: relative;
+  width: fit-content;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+
+.principal_opciones summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  color: #5c5c5c;
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.principal_opciones summary::-webkit-details-marker {
+  display: none;
+}
+
+.principal_opciones summary::after {
+  content: "⌄";
+  font-size: 10px;
+}
+
+.principal_opciones[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.principal_opciones ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  width: max-content;
+  min-width: 100px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+}
+
+.principal_opciones li {
+  padding: 7px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.principal_opciones li button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.principal_opciones li:hover {
+  background: #f5f5f5;
+}
+
+/* Franja de marca y datos de contacto */
+.principal-brandbar {
+  height: 64px;
+  background: #fff;
+}
+
+.principal-brandbar-inner {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 200px 1fr 1.4fr auto;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.principal-brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #202020;
+  text-decoration: none;
+}
+
+.principal_foto {
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.principal_titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+}
+
+.linea1 {
+  color: #252525;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.linea2 {
+  color: #777;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.principal_center,
+.principal_letra_2,
+.principal-question {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: #5c5c5c;
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.principal-service-icon {
+  margin-right: 8px;
+  color: #646464;
+  font-size: 13px;
+}
+
+.principal-question-icon {
+  display: inline-grid;
+  width: 12px;
+  height: 12px;
+  place-items: center;
+  border: 1px solid #777;
+  border-radius: 50%;
+  font-size: 8px;
+  line-height: 1;
+}
+
+/* Navegación, búsqueda e iconos */
+.principal_nav {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 42px;
+  margin-top: 12px;
+  border: 0;
+  background: #eee;
+  padding-left: 25px;
+}
+
+.principal-menu-toggle {
+  display: none;
+}
+
+.principal-nav-inner {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.principal_lista {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 30px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.principal_lista li {
+  padding: 0;
+}
+
+.principal_lista a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.principal_lista a::after {
+  content: "⌄";
+  margin-left: 3px;
+  color: #777;
+  font-size: 10px;
+}
+
+.principal_lista li:first-child a {
+  color: #8aaa53;
+}
+
+.principal-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.principal_buscador {
+  position: relative;
+  display: flex;
+  width: 180px;
+  margin: 0;
+  padding: 0;
+}
+
+.principal_buscador input {
+  width: 100%;
+  height: 27px;
+  box-sizing: border-box;
+  padding: 4px 27px 4px 11px;
+  border: 1px solid #e4e4e4;
+  border-radius: 14px;
+  outline: none;
+  font-size: 10px;
+}
+
+.principal_buscador input:focus {
+  border-color: #a4b97d;
+}
+
+.principal_buscador button {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #777;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.principal_buscador button:hover {
+  opacity: .7;
+}
+
+.principal-icon-button {
+  position: relative;
+  display: grid;
+  width: 20px;
+  height: 22px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.principal_imagen {
+  display: block;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.principal-cart-count {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  min-width: 11px;
+  height: 11px;
+  padding: 0 2px;
+  border-radius: 8px;
+  background: #91b849;
+  color: #fff;
+  font-size: 7px;
+  line-height: 11px;
+  text-align: center;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 760px) {
+  .principal-header-inner {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .principal-brandbar {
+    height: auto;
+    min-height: 60px;
+  }
+
+  .principal-brandbar-inner {
+    grid-template-columns: 150px 1fr;
+    column-gap: 12px;
+  }
+
+  .principal-question,
+  .principal_letra_2 {
+    display: none;
+  }
+
+  .principal-nav-inner {
+    gap: 12px;
+  }
+
+  .principal_lista {
+    gap: 12px;
+    overflow-x: auto;
+  }
+
+  .principal_nav {
+    display: flex;
+    height: auto;
+    min-height: 42px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 16px;
+  }
+
+  .principal-menu-toggle {
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    gap: 9px;
+    align-self: flex-start;
+    padding: 6px 12px;
+    border: 1px solid #b7ccb9;
+    border-radius: 9px;
+    background: #fff;
+    color: #155b35;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .principal-menu-icon { font-size: 18px; line-height: 1; }
+
+  .principal_lista {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow: visible;
+    white-space: normal;
+  }
+
+  .principal_nav.menu-abierto .principal_lista { display: flex; }
+
+  .principal_lista > li {
+    padding: 8px 2px;
+    border-top: 1px solid #dce5dd;
+  }
+
+  .principal_lista a {
+    font-size: 13px;
+  }
+
+  .principal-nav-actions {
+    gap: 9px;
+  }
+
+  .principal_buscador {
+    width: 125px;
+  }
+}
+.principal_fondo_3{
+  width: 100%;
+  height: 600px;
+  background-image: url("../images/Perro-gato-sobre-fondo-verde.png");
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center 70%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-bottom: 300px;
+}
+.principal_titulo_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 460px;
+}
+.principal_titulo_2 p {
+  margin: 0;
+}
+.principal_titulo_2 .parrafo_1{
+  font-size: 90px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.principal_titulo_2 .parrafo_2{
+  font-size: 70px;
+  font-weight: lighter;
+  color: rgb(212, 238, 10);
+  line-height: 1;
+  margin-top: 0;
+}
+.principal_titulo_2 .parrafo_3{
+  font-size: 20px;
+  color: #eee;
+  margin-top: 25px;
+  max-width: 600px;
+  line-height: 1.4;
+}
+.principal_titulo_2 .parrafo_4{
+  font-size: 20px;
+  color: #0a0a0a;
+  margin: 0;                       
+  line-height: 3;                  
+  text-align: center;
+}
+.principal_boton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 35%;
+}
+.principal_boton:hover {
+  background-color: #b0d300;   
+}
+.principal_boton:active {
+  transform: scale(0.97);      
+}
+.principal_grupo_4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;            
+}
+.principal_fila {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 60px;
+}
+.principal_boton_1 {
+  display: flex;
+  flex-direction: column;      
+  justify-content: center;
+  align-items: center;
+  gap: 4px;                    
+  padding: 30px 60px;          
+  background-color: #eae4e4;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.principal_boton_1 .linea_1 {
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  line-height: 1;
+}
+.principal_boton_1 .linea_2 {
+  font-size: 20px;
+  color: #2c2b2b;
+  line-height: 1;
+}
+.principal_boton_1:hover {
+  background-color: #9ed300;
+}
+.principal_mitades {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.principal_fondo_4 {
+  flex: 2;
+  background-color: white;
+  padding-left: 210px;
+  box-sizing: border-box;
+  margin-top: 120px;
+}
+.principal_letra_3 {
+  color: #35d64d;
+  font-size: 20px;
+  font-weight: bold;
+}
+.principal_columnas {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+  column-gap: 60px;
+  row-gap: 12px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.principal_columnas p {
+  margin: 5px;
+  font-size: 18px;
+  color: rgb(11, 11, 11);
+}
+.principal_dos_fotos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;            
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.principal_tarjeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+.principal_tarjeta img {
+  width: 70px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+.principal_tarjeta .texto_t p {
+  margin: 0;
+}
+.principal_tarjeta .texto_t p:first-child {
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+}
+.principal_tarjeta .texto_t p:last-child {
+  font-size: 15px;
+  color: gray;
+  margin-top: 4px;
+}
+.principal_foto_derecha {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+}
+.principal_mitades {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+}
+.principal_mitades_2_izq{
+  gap: 20px;
+}
+.principal_footer{
+  width: 100%;
+  height: 250px;
+  background-color: #173D2B;
+  margin-top: 150px;
+}
+.principal_foto_left{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 50px;
+}
+.alimento-accesorios .titulo_3,
+.principal_titulo_3 {
+  display: flex;
+  flex-direction: column;          
+  line-height: 1.2;                
+}
+.alimento-accesorios .letra_for,
+.principal_letra_for {
+  color: rgb(243, 239, 239);
+  font-size: 35px;
+  text-align: left;
+  padding-left: 10%;
+  line-height: 34px;
+  white-space: pre;  
+}
+.alimento-accesorios .letra_fur,
+.principal_letra_fur {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 26px;
+  padding-left: 12PX;
+  color: white;
+}
+.alimento-accesorios .letra_fur p,
+.principal_letra_fur p {
+  margin: 0;
+}
+.alimento-accesorios .texto_foto_r,
+.principal_texto_foto_r {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 50px;
+}
+.principal_mitades2_der {
+  justify-content: center;     
+}
+.alimento-accesorios .columnas_texto,
+.principal_columnas_texto {
+  display: grid;
+  grid-template-rows: repeat(4, auto); 
+  grid-auto-flow: column;                
+  column-gap: 150px;
+  row-gap: 25px;
+  align-items: start;
+  padding-left: 350px;
+}
+.alimento-accesorios .columnas_texto p,
+.principal_columnas_texto p {
+  margin: 0;
+  font-size: 15px;
+  color: #f6f6f6;
+}
+.alimento-accesorios .columnas_texto h1,
+.principal_columnas_texto h1 {
+  margin: 0;
+  font-size: 25px;
+  color: #f6f6f6;
+}
+.alimento-accesorios .foto_left {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 50px;
+}
+
+.principal_imagen_base{
+  position: relative;
+  width: 700px;
+}
+.principal_foto_fondo{
+  width: 70%;
+  height: 500px;
+  display: block;
+}
+.principal_foto_encima {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.principal_foto_1 {
+  top: 80px;
+  right: 180px;
+  height: auto;
+}
+.principal_foto_2 {
+  bottom: -80px;
+  left: -20px;
+  width: 40%;
+  height: 130px;
+} 
+/* parte plantilla principla jorge fin*/
+
+.alimento-accesorios .footer {
+  width: 100%;
+  height: 250px;
+  background-color: #173d2b;
+  margin-top: 150px;
+}
+/* INICIO CSS exclusivo de categoria-mascotas.html */
+
+.pagina-categorias-mascotas {
+    margin: 0;
+    padding: 0;
+    background-color: #fdfbf7;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pagina-categorias-mascotas .cm-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    min-height: 45px;
+    padding: 10px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e2e5e9;
+}
+
+.pagina-categorias-mascotas .cm-nav-container {
+    display: flex;
+    max-width: 1200px;
+    min-height: 45px;
+    margin: 0 auto;
+    padding: 0 24px;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.pagina-categorias-mascotas .cm-logo {
+    color: inherit;
+    text-decoration: none;
+}
+
+.pagina-categorias-mascotas .cm-brand-tagline {
+    display: block;
+    color: #596579;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pagina-categorias-mascotas .cm-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.pagina-categorias-mascotas .cm-nav-links a {
+    color: #252a30;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.pagina-categorias-mascotas .cm-nav-links a:hover,
+.pagina-categorias-mascotas .cm-nav-links a:focus-visible {
+    color: #14532d;
+}
+
+.pagina-categorias-mascotas .cm-contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.pagina-categorias-mascotas .cm-introduccion {
+    margin: 0 -24px 36px;
+    padding: 20px 24px 28px;
+    background-color: #f8f9fb;
+}
+
+.pagina-categorias-mascotas .cm-introduccion h1 {
+    margin: 0;
+    color: #303946;
+    font-size: 32px
+}
+
+.pagina-categorias-mascotas .cm-introduccion p {
+    margin: 6px 0 0;
+    color: #687386;
+    font-size: 16px;
+}
+
+.pagina-categorias-mascotas .cm-categorias {
+    margin: 20px 0 50px;
+}
+
+.pagina-categorias-mascotas .cm-decoracion-perro {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    float: left;
+    object-fit: contain;
+}
+
+.pagina-categorias-mascotas .cm-categorias h2 {
+    margin: 0 0 5px;
+    color: #1a202c;
+    font-size: 26px;
+}
+
+.pagina-categorias-mascotas .cm-subtitulo {
+    margin: 0 0 25px;
+    color: #718096;
+    font-size: 14px;
+}
+
+.pagina-categorias-mascotas .cm-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    clear: both;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform .3s ease;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.pagina-categorias-mascotas .cm-tarjeta img {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta h3 {
+    margin: 0 0 10px;
+    color: #1a202c;
+    font-size: 18px;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta p {
+    margin: 0 0 20px;
+    color: #4a5568;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.pagina-categorias-mascotas .cm-boton-categoria {
+    display: inline-block;
+    margin-top: auto;
+    padding: 9px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.pagina-categorias-mascotas .cm-boton-categoria:focus-visible {
+    outline: 3px solid #173d2b;
+    outline-offset: 3px;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta-perros {
+    background-color: #fff2d6;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta-perros .cm-boton-categoria {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta-gatos {
+    background-color: #f3e8ff;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta-gatos .cm-boton-categoria {
+    background-color: #a855f7;
+    color: #fff;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta-otras {
+    background-color: #dcfce7;
+}
+
+.pagina-categorias-mascotas .cm-tarjeta-otras .cm-boton-categoria {
+    background-color: #22c55e;
+    color: #fff;
+}
+
+.pagina-categorias-mascotas .cm-footer {
+    width: 100%;
+    margin-top: 60px;
+    padding: 40px 0;
+    background-color: #173d2b;
+    box-sizing: border-box;
+}
+
+.pagina-categorias-mascotas .cm-footer-contenido {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.pagina-categorias-mascotas .cm-footer-imagen {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.pagina-categorias-mascotas .cm-footer-marca {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-categorias-mascotas .cm-footer-titulo {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.pagina-categorias-mascotas .cm-footer-subtitulo {
+    color: #2dcc50;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.pagina-categorias-mascotas .cm-footer-columnas {
+    display: flex;
+    gap: 50px;
+}
+
+.pagina-categorias-mascotas .cm-footer-columna h2 {
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.pagina-categorias-mascotas .cm-footer-columna p {
+    margin: 6px 0;
+}
+
+.pagina-categorias-mascotas .cm-footer-columna a {
+    color: #e2e8f0;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.pagina-categorias-mascotas .cm-footer-columna a:hover,
+.pagina-categorias-mascotas .cm-footer-columna a:focus-visible {
+    color: #2dcc50;
+    text-decoration: underline;
+}
+
+@media (max-width: 850px) {
+    .pagina-categorias-mascotas .cm-tarjetas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .pagina-categorias-mascotas .cm-nav-container,
+    .pagina-categorias-mascotas .cm-nav-links,
+    .pagina-categorias-mascotas .cm-footer-contenido,
+    .pagina-categorias-mascotas .cm-footer-columnas {
+        flex-direction: column;
+    }
+
+    .pagina-categorias-mascotas .cm-nav-container {
+        gap: 14px;
+        padding: 8px 18px;
+    }
+
+    .pagina-categorias-mascotas .cm-nav-links {
+        gap: 10px;
+    }
+
+    .pagina-categorias-mascotas .cm-contenedor {
+        padding: 0 18px;
+    }
+
+    .pagina-categorias-mascotas .cm-introduccion {
+        margin-right: -18px;
+        margin-left: -18px;
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .pagina-categorias-mascotas .cm-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-categorias-mascotas .cm-footer-contenido,
+    .pagina-categorias-mascotas .cm-footer-columnas {
+        align-items: center;
+        text-align: center;
+    }
+}
+/* FIN CSS exclusivo de categoria-mascotas.html */
+
+/* Navegación compartida de catálogo, productos y categorías */
+.clinic-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 74px;
+  background-color: #35d64d;
+  border-bottom: 1px solid #28a73a;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: normal;
+}
+
+.clinic-nav-container {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.clinic-brand {
+  flex: 0 0 auto;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.clinic-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px clamp(14px, 2vw, 28px);
+}
+
+.clinic-nav-links a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease;
+  white-space: nowrap;
+}
+
+.clinic-nav-links a:hover,
+.clinic-nav-links a:focus-visible {
+  color: #173d2b;
+}
+
+.clinic-nav-links a:focus-visible,
+.clinic-brand:focus-visible {
+  outline: 2px solid #173d2b;
+  outline-offset: 4px;
+}
+
+.columnas_texto a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.columnas_texto a:hover,
+.columnas_texto a:focus-visible {
+  color: #d6e7a9;
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .clinic-navbar {
+    height: auto;
+    min-height: 74px;
+  }
+
+  .clinic-nav-container {
+    height: auto;
+    min-height: 74px;
+    flex-direction: column;
+    padding: 10px 18px;
+    gap: 10px;
+  }
+
+  .clinic-nav-links {
+    justify-content: center;
+    gap: 10px 18px;
+  }
+
+  .clinic-nav-links a {
+    font-size: 14px;
+  }
+}
+
+/* Evita flechas de submenú en los enlaces directos de la página principal */
+.principal_lista a::after {
+  content: none;
+}
+
+/* Footer de tarjeta-productos a todo el ancho, sin margen externo */
+.pagina-catalogo-mascotas #inicio {
+  margin-bottom: 0;
+}
+
+.pagina-catalogo-mascotas #footer,
+.pagina-catalogo-mascotas #footer .footer {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+/* Títulos principales con el mismo diseño de Comida para mascotas */
+.alimento-accesorios .title-area h2,
+.pagina-categorias-mascotas .cm-introduccion h1,
+body > main .intro h1 {
+  margin: 0;
+  color: #2d3748;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: normal;
+}
+
+/* Cuadrícula y tarjetas de Productos con las dimensiones de Comida para mascotas */
+.pagina-catalogo-mascotas #content {
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 0 2.5rem;
+}
+
+.pagina-catalogo-mascotas .producto {
+  min-height: 330px;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagina-catalogo-mascotas .producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(53, 214, 77, 0.15);
+}
+
+.pagina-catalogo-mascotas .producto img,
+.pagina-catalogo-mascotas .producto-ilustracion {
+  height: 150px;
+  margin-bottom: 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f1f5f9;
+}
+
+.pagina-catalogo-mascotas .producto img {
+  object-fit: contain;
+  padding: 0.5rem;
+  background: #fff;
+}
+
+.pagina-catalogo-mascotas .producto-ilustracion {
+  font-size: 2rem;
+}
+
+.pagina-catalogo-mascotas .search-bar-container input {
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Accesos al pedido en la navegación principal */
+.clinic-cart-nav-item {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 0;
+}
+
+.clinic-cart-nav-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border: 1px solid #a9cbb4;
+  border-radius: 999px;
+  background: #fff;
+  color: #16803c;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.clinic-cart-nav-button:hover {
+  border-color: #16803c;
+  background: #eff8f1;
+  color: #0f472a;
+}
+.clinic-cart-nav-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.clinic-cart-nav-button:focus-visible,
+.clinic-cart-panel button:focus-visible,
+.clinic-cart-panel input:focus-visible,
+.clinic-cart-panel select:focus-visible,
+.clinic-cart-panel textarea:focus-visible,
+.btn-ver-mas:focus-visible,
+.btn-favorito:focus-visible {
+  outline: 3px solid #93c840;
+  outline-offset: 3px;
+}
+
+.clinic-cart-count {
+  display: inline-grid;
+  min-width: 24px;
+  height: 24px;
+  place-items: center;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #fff;
+  color: #155b35;
+  font-size: .85rem;
+}
+
+.clinic-cart-panel {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(440px, 100vw);
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-left: 1px solid #d9e5dc;
+  border-radius: 0;
+  background: #fff;
+  color: #24332a;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.clinic-cart-panel[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.clinic-cart-panel [hidden] {
+  display: none !important;
+}
+
+.clinic-cart-panel::backdrop {
+  background: rgba(27, 68, 51, .42);
+  backdrop-filter: blur(2px);
+}
+
+.clinic-cart-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex: 0 0 auto;
+  padding: 18px 20px;
+  background: #155b35;
+  color: #fff;
+}
+
+.clinic-cart-heading h2 {
+  margin: 0;
+  color: inherit;
+  font-size: 1.25rem;
+}
+
+.clinic-cart-close {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.clinic-cart-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  flex: 0 0 auto;
+  border-bottom: 1px solid #dce6df;
+  background: #fff;
+}
+
+.clinic-cart-tab {
+  min-height: 48px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #65736a;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.clinic-cart-tab.activo {
+  border-bottom-color: #2dcc50;
+  color: #194b31;
+}
+
+.clinic-cart-tab-count {
+  display: inline-grid;
+  min-width: 21px;
+  height: 21px;
+  place-items: center;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: #eaf4ed;
+  color: #155b35;
+  font-size: .78rem;
+}
+
+.clinic-cart-content {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 16px 20px 26px;
+}
+
+.clinic-cart-content[hidden] { display: none !important; }
+
+.clinic-cart-panel h3 {
+  margin: 0 0 8px;
+  color: #183f2c;
+  font-size: 1rem;
+}
+
+.clinic-cart-status { margin: 0 0 8px; }
+.clinic-cart-empty { margin: 10px 0; }
+
+.clinic-cart-status,
+.clinic-cart-empty,
+.clinic-cart-favorites > p,
+.clinic-cart-form > p {
+  color: #58675e;
+  font-size: .92rem;
+}
+
+.clinic-cart-items {
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clinic-cart-panel .cart-item,
+.clinic-cart-panel .fav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #e2eae4;
+  border-radius: 12px;
+  background: #fbfdfb;
+}
+
+.clinic-cart-panel .cart-item-image {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.clinic-cart-panel .cart-item-info,
+.clinic-cart-panel .fav-item-info {
+  display: grid;
+  flex: 1 1 130px;
+  gap: 4px;
+}
+
+.clinic-cart-panel .cart-quantity-control,
+.clinic-cart-panel .fav-item-acciones {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.clinic-cart-panel .cart-quantity-button,
+.clinic-cart-panel .cart-remove-button,
+.clinic-cart-panel .cart-extra-boton {
+  min-height: 34px;
+  padding: 5px 9px;
+  border: 1px solid #cbd9cf;
+  border-radius: 8px;
+  background: #fff;
+  color: #1d5534;
+  font: inherit;
+  font-size: .86rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.clinic-cart-panel .cart-quantity-input {
+  width: 48px;
+  min-height: 34px;
+  padding: 4px;
+  border: 1px solid #cbd9cf;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.clinic-cart-panel .cart-item-subtotal { white-space: nowrap; }
+
+.clinic-cart-summary,
+.clinic-cart-delivery,
+.clinic-cart-form,
+.clinic-cart-coupon {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e6ece8;
+}
+
+.clinic-cart-summary > p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+.clinic-cart-total {
+  padding-top: 10px;
+  border-top: 1px dashed #cbd9cf;
+  color: #155b35;
+  font-size: 1.12rem;
+}
+
+.clinic-cart-discount-note,
+.clinic-cart-delivery small { color: #637268; font-size: .88rem; }
+.clinic-cart-discount-note.activo { color: #14723d; font-weight: 700; }
+
+.clinic-cart-coupon-row {
+  display: flex;
+  gap: 8px;
+}
+
+.clinic-cart-coupon-row input {
+  min-width: 0;
+  min-height: 42px;
+  flex: 1;
+  padding: 9px 11px;
+  border: 1px solid #cbd9cf;
+  border-radius: 9px;
+  font: inherit;
+}
+
+.clinic-cart-coupon-row button {
+  min-width: 78px;
+  border: 0;
+  border-radius: 999px;
+  background: #eaf4e5;
+  color: #235739;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.clinic-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.clinic-cart-delivery,
+.clinic-cart-form {
+  display: grid;
+  gap: 8px;
+}
+
+.clinic-cart-form details { padding: 4px 0; }
+.clinic-cart-form summary { color: #235739; font-weight: 700; cursor: pointer; }
+.clinic-cart-customer-fields { display: grid; gap: 8px; padding-top: 10px; }
+
+.clinic-cart-delivery select,
+.clinic-cart-form input,
+.clinic-cart-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: 9px 11px;
+  border: 1px solid #cbd9cf;
+  border-radius: 8px;
+  background: #fff;
+  color: #24332a;
+  font: inherit;
+}
+
+.clinic-cart-delivery p,
+.clinic-cart-form p { margin: 4px 0; }
+
+.clinic-cart-submit {
+  min-height: 44px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 9px;
+  background: #155b35;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.clinic-cart-submit:disabled { opacity: .55; cursor: not-allowed; }
+
+.clinic-whatsapp-button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: #20b85a;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.clinic-whatsapp-button:hover { background: #169b49; }
+.clinic-whatsapp-button:disabled { opacity: .55; cursor: not-allowed; }
+.clinic-whatsapp-note { color: #637268; font-size: .85rem; }
+
+.btn-ver-mas {
+  margin: 6px 0;
+  padding: 8px 12px;
+  border: 1px solid #b7d0be;
+  border-radius: 8px;
+  background: #f5faf6;
+  color: #155b35;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.detalle-producto {
+  margin: 8px 0;
+  padding: 10px 12px;
+  border-left: 3px solid #78a96c;
+  border-radius: 5px;
+  background: #f4f8f4;
+  color: #34483a;
+  font-size: .92rem;
+}
+
+.detalle-producto p { margin: 4px 0; }
+
+.btn-favorito {
+  width: 38px;
+  height: 38px;
+  align-self: flex-end;
+  border: 1px solid #cbd9cf;
+  border-radius: 50%;
+  background: #fff;
+  color: #a64a55;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.btn-favorito::before { content: "♡"; }
+.btn-favorito.activo::before { content: "♥"; }
+.clinic-cart-panel .fav-item { flex-wrap: wrap; }
+
+.clinic-order-card {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #dce8df;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.clinic-order-header,
+.clinic-order-summary > p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.clinic-order-header { align-items: center; }
+.clinic-order-header time,
+.clinic-order-delivery { color: #647368; font-size: .88rem; }
+.clinic-order-products { display: grid; gap: 4px; margin: 0; padding-left: 20px; }
+.clinic-order-delivery { margin: 0; }
+.clinic-order-summary { padding-top: 8px; border-top: 1px solid #e4ece6; }
+.clinic-order-summary > p { margin: 5px 0; }
+.clinic-order-total { padding-top: 7px; border-top: 1px dashed #cbd9cf; font-weight: 700; }
+
+@media (max-width: 540px) {
+  .clinic-cart-panel { inset: 0; width: 100vw; height: 100vh; height: 100dvh; }
+  .clinic-cart-content { padding: 14px 16px 22px; }
+  .clinic-cart-nav-button { gap: 4px; padding: 5px 8px; font-size: 13px; }
+  .clinic-cart-panel .cart-item { flex-wrap: wrap; }
+  .clinic-cart-panel .cart-item-subtotal { margin-left: auto; }
+}
+
+/* Ajustes compartidos para que las páginas se acomoden a pantallas móviles. */
+@media (max-width: 760px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .principal-topbar-inner,
+  .principal-brandbar-inner,
+  .principal_nav,
+  .alimento-accesorios .main-container,
+  .pagina-catalogo-mascotas .main-container,
+  .pagina-catalogo-mascotas #content,
+  .content-grid,
+  .intro,
+  .pagina-categorias-mascotas .cm-contenedor,
+  .pagina-categorias-mascotas .cm-footer,
+  .pagina-categorias-mascotas .cm-footer-contenido {
+    box-sizing: border-box;
+  }
+
+  img,
+  iframe,
+  video {
+    max-width: 100%;
+  }
+
+  .principal-topbar {
+    height: auto;
+    min-height: 38px;
+  }
+
+  .principal-topbar-inner {
+    min-height: 38px;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6px 14px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .principal_letra_1,
+  .principal-gift {
+    font-size: 10px;
+  }
+
+  .principal_barra { gap: 10px; }
+
+  .principal-brandbar {
+    height: auto;
+    min-height: 0;
+    padding: 12px 0;
+  }
+
+  .principal-brandbar-inner {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 9px;
+    justify-items: center;
+  }
+
+  .principal-brand {
+    min-width: 0;
+    justify-self: center;
+  }
+
+  .principal_titulo { min-width: 0; }
+  .linea1 { font-size: clamp(18px, 5vw, 22px); }
+
+  .principal_center {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .principal_nav {
+    margin-top: 0;
+  }
+
+  .principal_lista > li {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .principal_lista a {
+    display: block;
+    padding: 3px 0;
+  }
+
+  .principal_nav .clinic-cart-nav-item {
+    padding: 6px 0;
+  }
+
+  .alimento-accesorios .main-container,
+  .pagina-catalogo-mascotas .main-container {
+    width: 100%;
+    padding: 24px 16px 0;
+  }
+
+  .alimento-accesorios .catalog-header,
+  .pagina-catalogo-mascotas .catalog-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .alimento-accesorios .title-area h2,
+  .pagina-catalogo-mascotas .title-area h2 {
+    font-size: clamp(24px, 6vw, 30px);
+    line-height: 1.15;
+  }
+
+  .alimento-accesorios .filter-buttons,
+  .pagina-catalogo-mascotas .filter-buttons {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .alimento-accesorios .filter-btn,
+  .pagina-catalogo-mascotas .filter-btn {
+    padding: 8px 13px;
+    font-size: 13px;
+  }
+
+  .alimento-accesorios .catalog-pet-filters {
+    justify-content: flex-start;
+    margin: 0 0 16px;
+  }
+
+  .alimento-accesorios .search-bar-container,
+  .pagina-catalogo-mascotas .search-bar-container {
+    height: 48px;
+    margin-bottom: 22px;
+    padding-right: 13px;
+    padding-left: 14px;
+  }
+
+  .alimento-accesorios .search-bar-container input,
+  .pagina-catalogo-mascotas .search-bar-container input {
+    min-width: 0;
+    font-size: 15px;
+  }
+
+  .alimento-accesorios .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .alimento-accesorios .product-card {
+    min-width: 0;
+    padding: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .alimento-accesorios .card-img {
+    height: clamp(120px, 35vw, 170px);
+  }
+
+  .alimento-accesorios .card-img img {
+    object-fit: contain;
+  }
+
+  .alimento-accesorios .product-card h4 {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .alimento-accesorios .subtext { font-size: 12px; }
+  .alimento-accesorios .price { font-size: 16px; }
+
+  .pagina-catalogo-mascotas #content {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 18px 0 28px;
+  }
+
+  .pagina-catalogo-mascotas .producto {
+    min-width: 0;
+    min-height: 0;
+    padding: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .pagina-catalogo-mascotas .producto img {
+    height: clamp(130px, 36vw, 190px);
+    object-fit: contain;
+  }
+
+  .pagina-catalogo-mascotas .producto h2 {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .pagina-catalogo-mascotas .precio { font-size: 17px; }
+
+  .content-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 0 16px 36px;
+  }
+
+  .intro { padding: 0 16px; }
+  .intro h1 { font-size: clamp(26px, 7vw, 32px); }
+  .card { min-width: 0; padding: 20px; }
+  .map { height: clamp(210px, 62vw, 270px); }
+
+  .footer,
+  .principal_footer,
+  .alimento-accesorios .footer,
+  .pagina-catalogo-mascotas .footer {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-top: 42px;
+    padding: 0 0 24px;
+    box-sizing: border-box;
+  }
+
+  .texto_foto_r,
+  .alimento-accesorios .texto_foto_r,
+  .principal_texto_foto_r {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 0;
+    padding: 26px 16px 0;
+    text-align: center;
+  }
+
+  .foto_left,
+  .principal_foto_left,
+  .alimento-accesorios .foto_left {
+    width: 88px;
+    height: 88px;
+    margin: 0;
+  }
+
+  .titulo_3,
+  .principal_titulo_3 { align-items: center; }
+
+  .letra_for,
+  .principal_letra_for,
+  .alimento-accesorios .letra_for {
+    padding-left: 0;
+    font-size: 26px;
+    line-height: 1.1;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .letra_fur,
+  .principal_letra_fur,
+  .alimento-accesorios .letra_fur {
+    justify-content: center;
+    padding-left: 0;
+    font-size: 20px;
+  }
+
+  .columnas_texto,
+  .principal_columnas_texto,
+  .alimento-accesorios .columnas_texto {
+    display: grid;
+    width: min(100%, 380px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+    column-gap: 18px;
+    row-gap: 12px;
+    padding: 4px 0 0;
+    text-align: left;
+  }
+
+  .columnas_texto h1,
+  .principal_columnas_texto h1,
+  .alimento-accesorios .columnas_texto h1 {
+    font-size: 17px;
+  }
+
+  .columnas_texto p,
+  .principal_columnas_texto p,
+  .alimento-accesorios .columnas_texto p {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .principal_fondo_3 {
+    height: auto;
+    min-height: 500px;
+    padding: 34px 16px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .principal_titulo_2 {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .principal_titulo_2 .parrafo_1 {
+    font-size: clamp(36px, 10vw, 58px);
+  }
+
+  .principal_titulo_2 .parrafo_2 {
+    font-size: clamp(28px, 8vw, 46px);
+  }
+
+  .principal_titulo_2 .parrafo_3 {
+    max-width: 520px;
+    margin-top: 14px;
+    font-size: 15px;
+  }
+
+  .principal_titulo_2 .parrafo_4 {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .principal_grupo_4 { margin-top: 22px; }
+
+  .principal_fila {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .principal_boton_1 {
+    width: 100%;
+    min-width: 0;
+    min-height: 84px;
+    padding: 14px 8px;
+    border-radius: 16px;
+  }
+
+  .principal_boton_1 .linea_1 { font-size: 20px; }
+  .principal_boton_1 .linea_2 { font-size: 13px; }
+
+  .principal_mitades {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .principal_fondo_4 {
+    flex: none;
+    width: 100%;
+    margin-top: 0;
+    padding: 24px 16px;
+  }
+
+  .principal_columnas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    column-gap: 16px;
+    margin-top: 20px;
+  }
+
+  .principal_columnas p { font-size: 14px; }
+
+  .principal_foto_derecha {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .principal_imagen_base {
+    width: 100%;
+    max-width: 520px;
+    padding: 0 8px 66px;
+    box-sizing: border-box;
+  }
+
+  .principal_foto_fondo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .principal_foto_encima {
+    width: 32%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .principal_foto_1 { top: 10%; right: 6%; }
+  .principal_foto_2 { bottom: 0; left: 5%; width: 38%; height: auto; }
+
+  .pagina-categorias-mascotas .cm-footer {
+    width: 100%;
+    margin-top: 36px;
+    padding: 28px 0;
+  }
+
+  .pagina-categorias-mascotas .cm-footer-contenido {
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .principal-topbar-inner {
+    justify-content: center;
+    column-gap: 10px;
+  }
+
+  .principal_barra { margin-left: 0; }
+
+  .alimento-accesorios .product-grid,
+  .pagina-catalogo-mascotas #content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .alimento-accesorios .product-card,
+  .pagina-catalogo-mascotas .producto {
+    width: 100%;
+  }
+
+  .alimento-accesorios .card-img { height: 190px; }
+  .pagina-catalogo-mascotas .producto img { height: 200px; }
+
+  .principal_fila { grid-template-columns: minmax(0, 1fr); }
+
+  .columnas_texto,
+  .principal_columnas_texto,
+  .alimento-accesorios .columnas_texto {
+    width: min(100%, 330px);
+    column-gap: 12px;
+  }
+
+  .columnas_texto h1,
+  .principal_columnas_texto h1,
+  .alimento-accesorios .columnas_texto h1 { font-size: 15px; }
+
+  .columnas_texto p,
+  .principal_columnas_texto p,
+  .alimento-accesorios .columnas_texto p { font-size: 12px; }
+}
+
+/* En teléfono, mostrar completa la imagen del hero antes del texto. */
+@media (max-width: 600px) {
+  .principal_fondo_3 {
+    height: auto;
+    min-height: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: calc(66.6667vw + 22px) 16px 28px;
+    background-color: #00ff00;
+    background-size: 100% auto;
+    background-position: center top;
+  }
+
+  .principal_titulo_2 .parrafo_1,
+  .principal_titulo_2 .parrafo_2 {
+    color: #173d2b;
+    text-shadow: none;
+  }
+
+  .principal_titulo_2 .parrafo_3 {
+    color: #173d2b;
+    font-weight: 600;
+  }
+
+  .principal_grupo_4 { margin-top: 18px; }
+
+  .principal_boton {
+    min-height: 44px;
+    height: auto;
+    border: 0;
+    border-radius: 999px;
+    background: #fff;
+  }
+
+  .principal_titulo_2 .parrafo_4 {
+    color: #173d2b;
+    line-height: 1.2;
+  }
+}

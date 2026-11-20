@@ -1,0 +1,371 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comida para mascotas | Veterinary Clinic</title>
+    <!-- FontAwesome para íconos -->
+    <link rel="stylesheet" href="../css/estilogeneral.css?v=20261118-1">
+     <script defer src="../js/datos-productos.js"></script>
+    <script defer src="../js/componentes-carrito.js"></script>
+    <script defer src="../js/menu-movil.js"></script>
+    <script defer src="../js/calcular-total.js"></script>
+    <script defer src="../js/calcular-subtutal.js"></script>
+    <script defer src="../js/aplicar-descuento.js"></script>
+    <script defer src="../js/calcular-domicilio.js"></script>
+    <script defer src="../js/disponibilidad.js"></script>
+    <script defer src="../js/eliminar-carrito.js"></script>
+    <script defer src="../js/modificar-cantidades.js"></script>
+    <script defer src="../js/validar-cliente.js"></script>
+    <script defer src="../js/historial-pedidos.js"></script>
+    <script defer src="../js/funcion-carrito.js"></script>
+    <script defer src="../js/mensaje-whatsapp.js"></script>
+    <script defer src="../js/funcion-detalle.js"></script>
+    <script defer src="../js/favoritos.js"></script>
+    <script defer src="../js/catalogo.js"></script>
+    <script defer src="../js/comparador.js"></script>
+</head>
+<body class="alimento-accesorios">
+
+    <header class="principal-header">
+        <div class="principal-topbar">
+            <div class="principal-header-inner principal-topbar-inner">
+                <p class="principal_letra_1">¡Bienvenidos!</p>
+                <span class="principal-gift">Atención con cariño</span>
+                <div class="principal_barra">
+                    <span class="principal_opciones">ESPAÑOL</span>
+                    <span class="principal_opciones">COP</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="principal-brandbar">
+            <div class="principal-header-inner principal-brandbar-inner">
+                <a class="principal-brand" href="../pagina-principal/pagina-principal.html" aria-label="Clínica veterinaria, inicio">
+                    <img class="principal_foto" src="../images/primera-imagen.jpeg" alt="Clínica veterinaria">
+                    <span class="principal_titulo">
+                        <span class="linea1">Clínica veterinaria</span>
+                        <span class="linea2">Atención para mascotas</span>
+                    </span>
+                </a>
+                <p class="principal_center">
+                    <span class="principal-service-icon" aria-hidden="true">◷</span>
+                    <span class="principal-schedule-label">Lun. a sáb.: 8:00 a. m. - 6:00 p. m.</span>
+                </p>
+                <p class="principal_letra_2">
+                    <span class="principal-service-icon" aria-hidden="true">▣</span>
+                    <span class="principal-appointment-label">Agenda tu cita cada semana</span>
+                </p>
+                <p class="principal-question">
+                    <span class="principal-service-icon principal-question-icon" aria-hidden="true">?</span>
+                    <span class="principal-question-label">¿Tienes alguna pregunta?</span>
+                </p>
+            </div>
+        </div>
+
+        <nav class="principal_nav" aria-label="Navegación principal">
+            <ul class="principal_lista">
+                <li><a href="../pagina-principal/pagina-principal.html">Inicio</a></li>
+                <li><a href="catalogo-alimentos.html">Comida para mascotas</a></li>
+                <li><a href="../tarjeta-productos/tarjeta-productos.html">Productos</a></li>
+                <li><a href="../categoria-mascotas/categoria-mascotas.html">Categoría</a></li>
+                <li><a href="../horario-ubicacion/horario-ubicacion.html">Horario-ubicación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main id="inicio" class="main-container">
+
+        <!-- Título y Filtros Superiores -->
+        <div class="catalog-header">
+            <div class="title-area">
+                <h2> Alimentos y accesorios</h2>
+                <p>Productos seleccionados para su bienestar</p>
+            </div>
+            <!-- Filtros rápidos -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" type="button" data-filter-category="all">Todas las categorías</button>
+                <button class="filter-btn" type="button" data-filter-category="alimento">Alimentos</button>
+                <button class="filter-btn" type="button" data-filter-category="accesorio">Accesorios</button>
+            </div>
+        </div>
+
+        <div class="catalog-pet-filters filter-buttons" aria-label="Filtrar por tipo de mascota">
+            <button class="filter-btn active" type="button" data-filter-pet="all">Todas las mascotas</button>
+            <button class="filter-btn" type="button" data-filter-pet="perro">Perros</button>
+            <button class="filter-btn" type="button" data-filter-pet="gato">Gatos</button>
+            <button class="filter-btn" type="button" data-filter-pet="hamster">Hámsters</button>
+        </div>
+
+        <!-- Buscador -->
+        <div class="search-bar-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar alimentos o accesorios...">
+        </div>
+
+        <!-- ================= SECCIÓN PERROS ================= -->
+        <section id="perros" class="section-group">
+            <h3 class="category-heading">Perros</h3>
+            <div class="product-grid">
+
+                <!-- Alimento 1 -->
+                <div class="product-card" data-id="dog-chow-10kg" data-pet="perro" data-category="alimento">
+                    <div class="card-img">
+                        <img src="../images/alimento perro dog chow.jpg" alt="Alimento Perros">
+                    </div>
+                    <h4>Alimento para perros</h4>
+                    <p class="subtext">Adultos • Bolsa de 10 kg</p>
+                    <p class="price">$ 89.900</p>
+                    <button class="btn-cart">Agregar al carrito</button>
+                </div>
+
+                <!-- Alimento 2 -->
+                <div class="product-card" data-id="croquetas-agility-perro" data-pet="perro" data-category="alimento">
+                    <div class="card-img">
+                        <img src="../images/perro-agility-gold.png" alt="">
+                    </div>
+                    <h4>Croquetas para tu perro </h4>
+                    <p class="subtext">Sabor irresistible • 1.5kg</p>
+                    <p class="price">$ 39.000</p>
+                     <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Alimento 3 -->
+                <div class="product-card" data-id="alimento-metabolic-perro" data-pet="perro" data-category="alimento">
+                    <div class="card-img">
+                        <img src="../images/perro-metabolic.webp"  alt="Alimentos perro">
+                    </div>
+                    <h4>Alimento  Perro</h4>
+                    <p class="subtext">es un alimento clínico medicado para bajar de peso. • 3.5 kg</p>
+                    <p class="price">$ 128.000</p>
+                 <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Accesorio 1 -->
+                <div class="product-card" data-id="hueso-mascotas" data-pet="perro" data-category="accesorio">
+                    <div class="card-img">
+                        <img src="../images/huesos-perros-2.webp"hueso perro">
+                    </div>
+                    <h4>Hueso para mascotas</h4>
+                    <p class="subtext">Huesos reales de res o cerdo </p>
+                    <p class="price">$ 7.900</p>
+                   <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Accesorio 2 -->
+                <div class="product-card" data-id="collar-perros" data-pet="perro" data-category="accesorio">
+                    <div class="card-img">
+                        <img src="../images/collar-perro.jpg" alt="Collar perro">
+                    </div>
+                    <h4>Collar para perros</h4>
+                    <p class="subtext">Talla L • Ajustable</p>
+                    <p class="price">$ 24.900</p>
+                   <button class="btn-cart">Agregar al carrito</button>
+            </div>
+
+                <!-- Accesorio 3 -->
+                <div class="product-card" data-id="arnes-perros" data-pet="perro" data-category="accesorio">
+                    <div class="card-img">
+                        <img src="../images/arnes-perro.webp" alt="Arnés perro">
+                    </div>
+                    <h4>Arnés para perros</h4>
+                    <p class="subtext">Talla M • Cómodo y resistente</p>
+                    <p class="price">$ 36.900</p>
+                    <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+
+                </div>
+        </section>
+
+
+
+        <!-- ================= SECCIÓN GATOS ================= -->
+        <section id="gatos" class="section-group">
+            <h3 class="category-heading">Gatos</h3>
+            <div class="product-grid">
+
+                <!-- Alimento 1 -->
+                <div class="product-card" data-id="alimento-gatsy-gatos" data-pet="gato" data-category="alimento">
+                    <div class="card-img">
+                        <img src="../images/gato-gatsy.jpg" alt="Alimento gatos">
+                    </div>
+                    <h4>Alimento para gatos</h4>
+                    <p class="subtext">Adultos • Bolsa de 1.5 kg</p>
+                    <p class="price">$ 42.900</p>
+                  <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Alimento 2 -->
+                <div class="product-card" data-id="sobres-salmon-gato" data-pet="gato" data-category="alimento">
+                    <div class="card-img">
+                        <img src="../images/gato-magic.png" alt="Sobres gato">
+                    </div>
+                    <h4>Pack Sobres Salmón Gato</h4>
+                    <p class="subtext">Bolsa 1 kg </p>
+                    <p class="price">$ 6.350</p>
+                    <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Alimento 3 -->
+                <div class="product-card" data-id="snacks-catnip-gato" data-pet="gato" data-category="alimento">
+                    <div class="card-img">
+                        <img src="../images/gato-whiskas.jpg"Snacks gato">
+                    </div>
+                    <h4>Snacks con Catnip</h4>
+                    <p class="subtext">Crujientes • 85g</p>
+                    <p class="price">$ 14.500</p>
+                     <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Accesorio 1 -->
+                <div class="product-card" data-id="rascador-torre-gatos" data-pet="gato" data-category="accesorio">
+                    <div class="card-img">
+                        <img src="../images/rascador.jpg" alt="Rascador gato">
+                    </div>
+                    <h4>Rascador para gatos</h4>
+                    <p class="subtext">Mediano con torre</p>
+                    <p class="price">$ 69.900</p>
+                    <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Accesorio 2 -->
+                <div class="product-card" data-id="comedero-ceramica-gato" data-pet="gato" data-category="accesorio">
+                    <div class="card-img">
+                        <img src="../images/coca-gato.webp" alt="Comedero gato">
+                    </div>
+                    <h4>Comedero Cerámica Gato</h4>
+                    <p class="subtext">Anti-estrés ergonómico</p>
+                    <p class="price">$ 28.000</p>
+                  <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Accesorio 3 -->
+                <div class="product-card" data-id="juego-varita-gato" data-pet="gato" data-category="accesorio">
+                    <div class="card-img">
+                        <img src="../images/juego-gato.jpg" alt="Juguete varita">
+                    </div>
+                    <h4>Juegos para gato </h4>
+                    <p class="subtext">Diversión interactiva</p>
+                    <p class="price">$ 19.900</p>
+                    <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN HÁMSTERS ================= -->
+        <section id="hamsters" class="section-group">
+            <h3 class="category-heading">Hámsters</h3>
+            <div class="product-grid">
+
+                <!-- Alimento 1 -->
+                <div class="product-card" data-id="alimento-roedores-500g" data-pet="hamster" data-category="alimento">
+                    <div class="card-img">
+                        <img src="../images/hamster-piamonttina.webp" alt="Semillas hamster">
+                    </div>
+                    <h4>Alimento para roedores</h4>
+                    <p class="subtext">Mezcla nutritiva • 500g</p>
+                    <p class="price">$ 16.900</p>
+                   <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Alimento 2 -->
+             <div class="product-card" data-id="alimento-roedores-100g" data-pet="hamster" data-category="alimento">
+                    <div class="card-img">
+                        <img src="../images/2ham.jpg" alt="Semillas hamster">
+                    </div>
+                    <h4>Alimento para roedores</h4>
+                    <p class="subtext">Mezcla nutritiva • 100g</p>
+                    <p class="price">$ 6.900</p>
+                   <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Alimento 3 -->
+                <div class="product-card" data-id="gotas-hamster" data-pet="hamster" data-category="alimento">
+                    <div class="card-img">
+                        <img src="../images/gotas.jpg" alt="Vitaminas hamster">
+                    </div>
+                    <h4>Gotas Multivitamínicas</h4>
+                    <p class="subtext">Para el agua diaria</p>
+                    <p class="price">$ 15.000</p>
+                   <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Accesorio 1 -->
+                <div class="product-card" data-id="casa-madera-roedores" data-pet="hamster" data-category="accesorio">
+                    <div class="card-img">
+                        <img src="../images/casa-madera.jpg" alt="Casa madera">
+                    </div>
+                    <h4>Casa para roedores Madera</h4>
+                    <p class="subtext">Refugio ecológico seguro</p>
+                    <p class="price">$ 39.900</p>
+                    <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Accesorio 2 -->
+                <div class="product-card" data-id="rueda-ejercicio-hamster" data-pet="hamster" data-category="accesorio">
+                    <div class="card-img">
+                        <img src="../images/rueda-ejercicio.jpg" alt="Rueda hamster">
+                    </div>
+                    <h4>Rueda de Ejercicio</h4>
+                    <p class="subtext">Silenciosa • 20cm</p>
+                    <p class="price">$ 29.900</p>
+                  <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+                <!-- Accesorio 3 -->
+                <div class="product-card" data-id="jaula-tuneles-hamster" data-pet="hamster" data-category="accesorio">
+                    <div class="card-img">
+                        <img src="../images/jaula.webp" alt="Jaula hamster">
+                    </div>
+                    <h4>Jaula con Tubos y Túneles</h4>
+                    <p class="subtext">Multinivel equipada</p>
+                    <p class="price">$ 75.000</p>
+                     <button class="btn-cart">Agregar al carrito</button>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+             <div class="footer">
+          <div class="texto_foto_r">
+             <img src="../images/footer.png"  class="foto_left"   alt="Usabilidad" >
+             <div class="titulo_3">
+                <span class="letra_for">Veterinary</span>
+                <span class="letra_fur">Clinic</span>
+             </div>
+               <div class="columnas_texto">
+                  <h1>Navegación</h1>
+                  <p><a href="catalogo-alimentos.html">Comida para mascotas</a></p>
+                  <p><a href="../categoria-mascotas/categoria-mascotas.html">Categoría</a></p>
+                  <p><a href="../tarjeta-productos/tarjeta-productos.html">Productos</a></p>
+                  <h1>Información</h1>
+                  <p><a href="../horario-ubicacion/horario-ubicacion.html">Horario-ubicación</a></p>
+                  <p><a href="../pagina-principal/pagina-principal.html">Inicio</a></p>
+               </div>
+            </div>
+      </div>
+  </div>
+
+</body>
+</html>
